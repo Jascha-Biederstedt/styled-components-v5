@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link as ReactRouterDomLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
+import { Toggle } from '../common/Toggle';
 
 const HeaderWrapper = styled.header`
   height: 60px;
@@ -54,6 +55,7 @@ const StyledLink = styled(Link)`
   margin: auto 0;
   font-weight: ${p => (p.isActive ? 'bold' : 'normal')};
   color: black;
+  text-decoration: none;
 `;
 
 const MobileMenuIcon = styled.div`
@@ -92,6 +94,7 @@ export const Header = () => {
         <StyledLink to="/login" isActive={pathname === '/login'}>
           Login
         </StyledLink>
+        <Toggle />
       </Menu>
     </HeaderWrapper>
   );
